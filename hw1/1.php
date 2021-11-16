@@ -13,12 +13,27 @@ class Product{
         $this->description = $description;
         $this->img = $img;
         }
+
     function getPrice(){
         return $this->price;
     }
     function render(){
         return "<div><h3>$this->name</h3><img src=\"$this->img\"><p>$this->description</p><h4>$this->price</h4></div>";
-    }
-        
+    }        
 
 }
+
+class ProductInfo extends Product{
+    protected $imgList;
+    protected $specs;
+
+    private function loadProduct(){
+     /*Load data from DB */   
+    }
+
+}
+
+// $prod = new Product(1,"Table", '2200.00', 'No descr',"nop");
+// echo $prod -> getPrice() . PHP_EOL;
+// echo $prod -> render() . PHP_EOL;
+//$single = new ProductInfo()
