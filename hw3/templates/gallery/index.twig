@@ -1,0 +1,19 @@
+{% include 'header.twig' %}
+
+<div class="gallery-wrapper">
+    <div class="gallery">
+        {% for image in gallery %}
+
+        <img id='{{ image.id }}' src="{{ image.src }}" class="gallery-img">
+
+        {% endfor %}
+    </div>
+    <div class="gallery-viewport">
+        <div class="vieport-wrapper">
+        <img src="" alt="Bigimg" class="viewport">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/main.js"></script>
+
+{% include 'footer.twig' %}
