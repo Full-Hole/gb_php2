@@ -4,7 +4,7 @@
     <div class="gallery">
         {% for image in gallery %}
 
-        <img id='{{ image.id }}' src="{{ image.src }}" class="gallery-img">
+        <a href="singleimg.php?img_id={{ image.id }}" target="_blank"> <img id='{{ image.id }}' src="{{ image.src }}" class="gallery-img"></a>
 
         {% endfor %}
     </div>

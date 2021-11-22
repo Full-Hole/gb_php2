@@ -10,9 +10,7 @@ viewport.src=imgList[0].src;
  imgList.forEach(img => img.addEventListener('click', switchImg))
 //console.log(x);
 
-function roomba(event){
-    console.log(event);
-}
+
 function switchImg(event){
     viewport.src=event.target.src;
 }
