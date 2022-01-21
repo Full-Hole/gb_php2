@@ -2,7 +2,7 @@
 
 trait Singletrait
 {
-    private static $instance;  // Экземпляр объекта
+    private static $_instance;  // Экземпляр объекта
     // Защищаем от создания через new Singleton
     final function __construct()
     { /* ... @return Singleton */
@@ -15,13 +15,14 @@ trait Singletrait
     final function __wakeup()
     { /* ... @return Singleton */
     }
+
     // Возвращает единственный экземпляр класса. @return Singleton
     public static function getInstance()
     {
-        if (empty(self::$instance)) {
-            self::$instance = new self();
+        if (empty(self::$_instance)) {
+            self::$_instance = new self();
         }
-        return self::$instance;
+        return self::$_instance;
     }
 }
 
@@ -34,15 +35,5 @@ class Singleton
     }
 }
 
-class Juston extends Singleton
-{
-    public $word = "Word";
-    public function sayHi()
-    {
-        parent::sayHi();
-        echo $this->word;
-    }
-}
 Singleton::getInstance()->sayHi();
-$a = new Juston();
-$a->sayHi();
+
