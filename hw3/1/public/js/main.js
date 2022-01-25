@@ -7,7 +7,7 @@ let viewport = document.querySelector('.viewport');
  let imgList = document.querySelectorAll(".gallery-img");
 
 viewport.src=imgList[0].src;
- imgList.forEach(img => img.addEventListener('click', switchImg))
+ imgList.forEach(img => img.addEventListener('mouseover', switchImg))
 //console.log(x);
 
 

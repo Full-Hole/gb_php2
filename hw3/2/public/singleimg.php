@@ -13,7 +13,7 @@ if($img_id && is_numeric($img_id)){
         $opt = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,];
-        $dbh = new PDO('mysql:dbname=gallery;host=172.23.160.1', 'php_gallery', 'MySecurePassword!', $opt);
+        $dbh = new PDO('mysql:dbname=gallery;host=172.25.224.1', 'php_gallery', 'MySecurePassword!', $opt);
       } catch (PDOException $e) {
         echo "Error: Could not connect. " . $e->getMessage();
       }
