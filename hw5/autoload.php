@@ -1,6 +1,9 @@
 <?php
-require_once 'vendor/autoload.php';
-Twig_Autoloader::register();
+
+require_once dirname(__DIR__) . '/vendor/autoload.php';
+
+use Twig\Environment;
+use Twig\Loader\FilesystemLoader;
 
 spl_autoload_register("gbStandardAutoload");
 

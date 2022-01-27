@@ -1,10 +1,10 @@
 <?php // в начале конфиг
 class DB
 {
-	public static $dsn = 'mysql:dbname=table;host=localhost';
-	public static $user = 'user';
-	public static $pass = 'password';
-    public static  $opt = [
+	private static $dsn = 'mysql:dbname=gallery;host=172.23.160.1';
+	private static $user = 'php_gallery';
+	private static $pass = 'MySecurePassword!';
+    private static  $opt = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ];
@@ -36,7 +36,7 @@ class DB
 					self::$dsn, 
 					self::$user, 
 					self::$pass, 
-					array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
+					self::$opt
 				);
 				self::$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 			} catch (PDOException $e) {
