@@ -16,14 +16,20 @@ class C_User extends C_Base
         $user = new M_User();
 		 $info = "Пользователь не авторизован";
         if($this->isPost()){
-            $login = $_POST['login'];
-			$info = $user->auth("log","past");
-			if($info){
+			$login = $_POST['login'] ? strip_tags($_POST['login']) : "";
+            $pass = $_POST['pass'] ? strip_tags($_POST['pass']) : "";            
+            //$pass = md5($pass.strrev(md5($login)));
+			//$info = $user->auth($login,$pass);
+			if($user->auth($login,$pass)){
 				//session_start();
 				$_SESSION['uid']='1';
 				header('location: index.php');
 				exit();
+			}else{
+				header('location: index.php?c=user&act=fail');
+				exit();
 			}
+		
 			
             // $info = $user->auth("log","past");
 		    // $this->content = $this->Template('v/v_index.php', array('text' => $info));
@@ -43,6 +49,11 @@ class C_User extends C_Base
 
 		$this->content = $this->Template('v/v_lk.php');
 				
+	}
+	public function action_fail(){
+
+		$this->content = $this->Template('v/v_lk.php');
+		$this->content = $this->Template('v/v_index.php', array('text' => 'Ошибка входа'));		
 	}
 	
 

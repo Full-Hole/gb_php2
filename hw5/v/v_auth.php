@@ -10,6 +10,6 @@
     Логин
     <input type="text" name='login'><br/>
     Пароль
-    <input type="text" name='password'><br/>
+    <input type="passoword" name='pass'><br/>
 	<input type="submit" value="Вход" />
 </form>
