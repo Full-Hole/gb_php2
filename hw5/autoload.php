@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__DIR__) . '/vendor/autoload.php';
+require_once dirname(__DIR__) . '/hw5/vendor/autoload.php';
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -15,7 +15,7 @@ function gbStandardAutoload($className)
     ];
     $found = false;
     foreach ($dirs as $dir) {
-        $fileName = __DIR__ . '/' . $dir . '/' . $className . '.class.php';
+        $fileName = __DIR__ . '/' . $dir . '/' . $className . '.php';
         if (is_file($fileName)) {
 
             require_once($fileName);
@@ -25,7 +25,7 @@ function gbStandardAutoload($className)
 	//$obj = new A;
 		
     if (!$found) {
-        throw new Exception('Unable to load ' . $className);
+        throw new Exception('Unable to load ' . $className . ' in '.$fileName);
 }
     return true;
 }

@@ -1,6 +1,8 @@
 <?php // в начале конфиг
 class DB
 {
+	private static $_instance;
+
 	private static $dsn = 'mysql:dbname=gallery;host=172.23.160.1';
 	private static $user = 'php_gallery';
 	private static $pass = 'MySecurePassword!';
@@ -23,6 +25,8 @@ class DB
 	 * Выполняемый SQL запрос.
 	 */
 	public static $query = '';
+
+
  
 	/**
 	 * Подключение к БД.
@@ -38,7 +42,7 @@ class DB
 					self::$pass, 
 					self::$opt
 				);
-				self::$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+				//self::$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 			} catch (PDOException $e) {
 				exit('Error connecting to database: ' . $e->getMessage());
 			}

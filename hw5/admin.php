@@ -1,6 +1,6 @@
 <?php
 
-require_once('controller/c_user.php');
+require_once('autoload.php');
 
 ?>
 <form action="server.php" method='get'>
