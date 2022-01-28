@@ -1,9 +1,10 @@
 hw3/
 hw4/
 hw5/vendor
+/hw5_old
 test.txt
 debug.log
 hw3/1/vendor
 hw3/2/vendor
 work/
-index.php
+/index.php

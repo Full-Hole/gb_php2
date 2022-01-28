@@ -1,17 +1,11 @@
 <?php
-
-require_once dirname(__DIR__) . '/hw5/vendor/autoload.php';
-
-use Twig\Environment;
-use Twig\Loader\FilesystemLoader;
-
 spl_autoload_register("gbStandardAutoload");
 
 function gbStandardAutoload($className)
 {
     $dirs = [
-            'controller',
-            'model',
+            'c',
+            'm',
     ];
     $found = false;
     foreach ($dirs as $dir) {
