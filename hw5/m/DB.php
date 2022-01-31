@@ -3,7 +3,7 @@ class DB
 {
 	private static $_instance;
 
-	private static $dsn = 'mysql:dbname=gallery;host=172.25.224.1';
+	private static $dsn = 'mysql:dbname=gallery;host=172.18.80.1';
 	private static $user = 'php_gallery';
 	private static $pass = 'MySecurePassword!';
     private static  $opt = [

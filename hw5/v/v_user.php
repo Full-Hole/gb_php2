@@ -25,7 +25,8 @@
 			<a href="index.php?c=user&act=lk">ЛК</a>	
 			<a href="index.php?c=user&act=exit">Выход</a>	
 		<?php else: ?>
-			<a href="index.php?c=user&act=login">Вход</a>
+			<a href="index.php?c=user&act=auth">Вход</a> | 
+			<a href="index.php?c=user&act=reg">Регистрация</a>
 		<?php endif; ?>
 	</div>
 	
