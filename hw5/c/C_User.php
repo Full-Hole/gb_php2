@@ -71,7 +71,7 @@ class C_User extends C_Base
 		// $this->content = $this->Template('v/v_edit.php', array('text' => '123'));
 		//$text = text_get();
 		//$today = date();
-		$this->content = $this->Template('v/v_auth.php');
+		$this->content = $this->Template('v/v_reg.php');
 				
 	}
 	public function action_lk(){
