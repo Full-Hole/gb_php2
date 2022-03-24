@@ -7,11 +7,11 @@
 ?>
 
 <form method="post">
-    Логин
+<label for="login" class="input-label">Логин</label>
     <input type="text" name='login'><br/>
-    Пароль
+    <label for="pass" class="input-label">Пароль</label>
     <input type="passoword" name='pass'><br/>
-    Ваше Имя
+    <label for="username" class="input-label">Ваше Имя</label>
     <input type="text" name='username'><br/>
 	<input type="submit" value="Вход" />
 </form>

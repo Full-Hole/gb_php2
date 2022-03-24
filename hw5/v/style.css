@@ -49,3 +49,8 @@ textarea
 	height: 200px;
 	background-color: #999;
 }
+
+.input-label {
+	width: 60px;
+    display: inline-block;
+}

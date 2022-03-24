@@ -46,22 +46,25 @@ class C_User extends C_Base
 				
 	}
 	public function action_reg(){
-		$this->title .= '::Авторизация';
+		$this->title .= '::Регистрация';
         $user = new M_User();
 		 //$info = "Пользователь не авторизован";
         if($this->isPost()){
 			$login = $_POST['login'] ? strip_tags($_POST['login']) : "";
-            $pass = $_POST['pass'] ? strip_tags($_POST['pass']) : "";            
-            //$pass = md5($pass.strrev(md5($login)));
+            $pass = $_POST['pass'] ? strip_tags($_POST['pass']) : "";
+			$username = $_POST['username'] ? strip_tags($_POST['username']) : "";         
+            $pass = md5($pass.strrev(md5($login)));
 			//$info = $user->auth($login,$pass);
-			if($user->auth($login,$pass)){
-				//session_start();
-				$_SESSION['uid']='1';
-				header('location: index.php');
-				exit();
-			}else{
+			if($user->check_login($login)){
 				header('location: index.php?c=user&act=fail');
 				exit();
+			}else{
+				if($user->reg($login,$pass,$username)){
+					//session_start();
+					$_SESSION['uid']='1';
+					header('location: index.php');
+					exit();
+				}
 			}
 		
 			
