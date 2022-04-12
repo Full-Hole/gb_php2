@@ -24,8 +24,9 @@
 		<a href="index.php?c=page&act=edit">Редактировать текст |</a>
 		<?php if(isset($_SESSION['uid'])): ?>
 			<a href="index.php?c=user&act=lk">ЛК |</a>
-			<?php if(isset($_SESSION['uri']) && $_SESSION['uri'] ==1 ): ?>	
-				<a href="index.php?c=admin&act=open">Админка</a>
+			
+			<?php if(isset($_SESSION['uri']) && $_SESSION['uri'] == '1' ): ?>	
+				<a href="index.php?c=admin&act=open">Админка |</a>
 			<?php endif; ?>
 			<a href="index.php?c=user&act=exit">Выход</a>	
 		<?php else: ?>

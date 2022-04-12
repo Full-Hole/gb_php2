@@ -88,6 +88,7 @@ class DB
 	public static function add($query, $param = array())
 	{
 		self::$sth = self::getDbh()->prepare($query);
+		//echo $query;
 		return (self::$sth->execute((array) $param)) ? self::getDbh()->lastInsertId() : 0;
 	}
 	
