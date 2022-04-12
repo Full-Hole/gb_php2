@@ -1,0 +1,19 @@
+{% include 'header.twig' %}
+
+<div class="gallery-wrapper">
+    <div class="gallery">
+        {% for image in gallery %}
+
+        <a href="singleimg.php?img_id={{ image.id }}" target="_blank"> <img id='{{ image.id }}' src="{{ image.src }}" class="gallery-img"></a>
+
+        {% endfor %}
+    </div>
+    <div class="gallery-viewport">
+        <div class="vieport-wrapper">
+        <img src="" alt="Bigimg" class="viewport">
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/main.js"></script>
+
+{% include 'footer.twig' %}
